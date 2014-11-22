@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="ContainerContentChangingSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContainerContentChangingSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:customControl="using:ContainerContentChangingSample.CustomControls"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="ContainerContentChangingSample" FontSize="48" Margin="40,40,20,100"></TextBlock>
+        </StackPanel>
+        <GridView Grid.Row="1" ContainerContentChanging="OnContainerContentChanging" ItemsSource="{Binding SampleData}">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <customControl:ContainerContentChangingSampleItem/>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+    </Grid>
+</Page>

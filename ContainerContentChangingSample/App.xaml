@@ -1,0 +1,22 @@
+﻿<Application
+    x:Class="ContainerContentChangingSample.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContainerContentChangingSample"
+    xmlns:customControl="using:ContainerContentChangingSample.CustomControls">
+
+    <Application.Resources>
+        <Style TargetType="customControl:ContainerContentChangingSampleItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="customControl:ContainerContentChangingSampleItem">
+                        <StackPanel Width="300">
+                            <TextBlock x:Name="TitleTextBlock" FontSize="18" Foreground="White" TextTrimming="WordEllipsis" VerticalAlignment="Center" Opacity="0"></TextBlock>
+                            <TextBlock x:Name="ContentTextBlock" FontSize="14" Foreground="#FF00AED8" TextTrimming="WordEllipsis" VerticalAlignment="Center" Opacity="0"></TextBlock>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>
